@@ -1,45 +1,13 @@
-let palavra;
-
 function setup() {
-  createCanvas(400, 400);
-  
-  palavra = palavraAleatoria();
-  
+  createCanvas(600, 600);
+  background("black");
 }
 
-function palavraAleatoria() {
- let palavras = ["palmeiras", "verde", "verdao"]; 
-   return random(palavras);   
-}
-
+function draw(){
+  stroke("blue");
+  fill("red");
   
-function inicializaCores() {
-  background("white");
-  fill("black");
-  textSize(64);
-  textAlign(CENTER, CENTER);
+  if(mouseIsPressed){
+    rect(mouseX, mouseY, 20, 30);
+  }
 }
-
- function palavraParcial(minimo, maximo){
-   let quantidade = map(mouseX, minimo, maximo, 1, palavra.length);
-  let parcial = palavra.substring(0, quantidade);
-   return parcial;
- }
-
-function draw() {
-  inicializaCores();
-  
-  
-  
-  let texto = palavraParcial(0, width);
-  text(texto, 200, 200);
-
-
-
-}
-
-
-function lugaresBacanasParaPassear(diaDasSemana, bairro) {
-  // return??
-}
-
